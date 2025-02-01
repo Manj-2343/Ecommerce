@@ -136,7 +136,7 @@ src/
 ├── App.jsx
 └── app.css
 📧 Contact
-Feel free to connect: manojmahendrabiswal@gmail.com
+Feel free to connect: manojbiswal521@gmail.com
 
 yaml
 Copy
