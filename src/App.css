@@ -1,0 +1,16 @@
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.card-content {
+  max-width: 100%;
+}
