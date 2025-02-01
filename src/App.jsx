@@ -122,7 +122,9 @@ const App = () => {
   };
 
   return (
-    <GoogleOAuthProvider clientId="821738138104-ijr2v9vplbq0s91fo3ddac25ja93lrue.apps.googleusercontent.com">
+    <GoogleOAuthProvider
+      clientId={import.meta.env.VITE_REACT_APP_GOOGLE_CLIENT_ID}
+    >
       <div
         className={`min-h-screen ${
           darkMode ? "bg-gray-900 text-white" : "bg-gray-50 text-gray-900"
