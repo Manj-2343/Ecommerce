@@ -11,6 +11,7 @@ import { Footer } from "./components/Footer";
 
 const App = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,12 +32,15 @@ const App = () => {
 
   const fetchProducts = async () => {
     try {
+      setLoading(true);
       const response = await fetch("https://fakestoreapi.com/products");
       const data = await response.json();
       setProducts(data);
       setFilteredProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -120,6 +124,9 @@ const App = () => {
   const toggleCartModal = () => {
     setShowCartModal(!showCartModal);
   };
+  if (loading) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <GoogleOAuthProvider
